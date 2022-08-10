@@ -1,0 +1,37 @@
+{
+  "name": "scelloo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_PATH=. pm2-runtime start pm2.json",
+    "start:dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate:create": "sequelize-cli migration:generate --name",
+    "migrate:run": "NODE_ENV=database sequelize-cli db:migrate",
+    "migrate:rollback": "NODE_ENV=database sequelize-cli db:migrate:undo:all --to",
+    "migrate:undo": "NODE_ENV=database sequelize-cli db:migrate:undo --name",
+    "seed:run": "NODE_ENV=database sequelize-cli db:seed:all",
+    "seed:create": "sequelize-cli seed:generate --name",
+    "seed:undoall": "sequelize-cli db:seed:undo:all",
+    "seed:undo": "sequelize-cli db:seed:undo --seed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "awilix": "^7.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3",
+    "sequelize-cli": "^6.4.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
